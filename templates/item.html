@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block title %}
+Add New Item
+{% endblock %}
+{% block content %}
+{% if msg %}
+    <div class="alert alert-info" role="alert">
+        {{ msg }}
+    </div>
+    {% endif %}
+    <form action="{{ url_for('addrec') }}" method="POST">
+        <h3>Please Add the New Item:</h3>
+        
+        Name<br>
+        <input type="text" name="product_name" /><br>
+
+
+        Description<br>
+        <textarea name="description"></textarea><br>
+
+        quantity<br>
+        <input type="text" name="quantity" /><br>
+
+        Price<br>
+        <input type="text" name="price" /><br>
+
+        Category<br>
+        <input type="text" name="category" /><br>
+
+        Supplier<br>
+        <input type="text" name="supplier" /><br>
+
+        Barcode<br>
+        <input type="text" name="barcode" /><br>
+
+        <input type="submit" value="Submit" /><br>
+    </form>
+{% endblock %}

@@ -25,3 +25,158 @@
     padding: 5px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* Form Styles */
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #495057;
+    font-weight: 500;
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus {
+    outline: none;
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+form input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+form input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+/* Quantity Controls */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.quantity-input-container {
+    flex: 1;
+}
+
+.quantity-btn {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity-btn:hover {
+    background-color: #5a6268;
+}
+
+.quantity-btn:active {
+    transform: scale(0.95);
+}
+
+/* Alert Message Styles */
+.alert {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+    color: #0c5460;
+}
+
+/* Table Controls */
+.table-controls {
+    margin: 20px 0;
+    text-align: right;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #218838;
+    color: white;
+    text-decoration: none;
+}
+
+.download-btn:active {
+    transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    form {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    form input[type="text"] {
+        font-size: 14px;
+    }
+    
+    .quantity-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+}
+
+/* Barcode Image Styles */
+.barcode-image {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}

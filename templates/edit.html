@@ -1,26 +1,41 @@
 {% extends "layout.html" %}
 {% block title %}
-Edit Student
+Edit Item
 {% endblock %}
 {% block content %}
-        <h1>Edit Student Record</h1>
-        {% for row in rows %}
-        <form action="{{ url_for('editrec') }}" method="POST">
-            <h3 style="color:blue">Student ID: {{ row['rowid']}}</h3>
-            <input type="hidden" name="rowid" value="{{ row['rowid'] }}">
-            Name<br>
-            <input type="text" name="nm" value="{{ row['name'] }}"/><br>
+    {% if msg %}
+    <div class="alert alert-info" role="alert">
+        {{ msg }}
+    </div>
+    {% endif %}
 
-            Address<br>
-            <input type="text" name="add" value="{{row['addr']}}"/><br>
+    <h1>Edit Item Record</h1>
+    {% for row in rows %}
+    <form action="{{ url_for('editrec') }}" method="POST">
+        <h3 style="color:blue">Item ID: {{ row['id']}}</h3>
+        <input type="hidden" name="id" value="{{ row['id'] }}">
+        Name<br>
+        <input type="text" name="product_name" value="{{ row['product_name'] }}"/><br>
+        
+        Description<br>
+        <input type="text" name="description" value="{{row['description']}}"/><br>
 
-            City<br>
-            <input type="text" name="city" value="{{ row['city'] }}"/><br>
+        Quantity<br>
+        <input type="text" name="quantity" value="{{ row['quantity'] }}"/><br>
 
-            Zip Code<br>
-            <input type="text" name="zip" value="{{ row['zip'] }}"/><br>
+        Price<br>
+        <input type="text" name="price" value="{{ row['price'] }}"/><br>
 
-            <input type="submit" value="Submit" /><br>
-        </form>
-        {% endfor %}
+        Category<br>
+        <input type="text" name="category" value="{{ row['category'] }}"/><br>
+
+        Supplier<br>
+        <input type="text" name="supplier" value="{{ row['supplier'] }}"/><br>
+        
+        Barcode<br>
+        <input type="text" name="barcode" value="{{ row['barcode'] }}"/><br>
+
+        <input type="submit" value="Submit" /><br>
+    </form>
+    {% endfor %}
 {% endblock %}

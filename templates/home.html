@@ -1,7 +1,59 @@
 {% extends "layout.html" %}
 {% block title %}
-Student Flask App with CRUD
+Schifflange Inventory Management System
 {% endblock %}
 {% block content %}
-<h1>Welcome to my Student Flask App!</h1>
+<h1>Welcome to Schifflange Inventory Management System!</h1>
+{% if msg %}
+<div class="alert alert-info mt-3" role="alert">
+    {{ msg }}
+</div>
+{% endif %}
+<form action="{{ url_for('updateItemQuantity') }}" method="POST">
+    
+    <div class="quantity-controls">
+        <div class="quantity-input-container">
+            <label for="quantity">How much you took?</label>
+            <input type="text" name="quantity" id="quantity" value="1" required/>
+        </div>
+        <button type="button" class="quantity-btn" onclick="increaseQuantity()">+</button>
+    </div>
+    
+    <!-- <label for="barcode">Barcode</label> -->
+    <input type="text" name="barcode" id="barcode" placeholder="Enter Barcode" required/>
+    
+    <input type="submit" value="Update Quantity" />
+</form>
+
+
+
+<script>
+// function fetchQuantity() {
+//     const barcode = document.getElementById('barcode').value;
+//     if (barcode) {
+//         fetch(`/get_quantity/${barcode}`)
+//             .then(response => response.json())
+//             .then(data => {
+//                 if (data.quantity !== null) {
+//                     document.getElementById('quantity').value = data.quantity;
+//                 } else {
+//                     document.getElementById('quantity').value = '';
+//                 }
+//             })
+//             .catch(error => {
+//                 console.error('Error:', error);
+//                 document.getElementById('quantity').value = '';
+//             });
+//     }
+// }
+
+function increaseQuantity() {
+    const quantityInput = document.getElementById('quantity');
+    let currentValue = parseInt(quantityInput.value) || 0;
+    quantityInput.value = currentValue + 1;
+    document.getElementById('barcode').focus();
+}
+
+</script>
+
 {% endblock %}
